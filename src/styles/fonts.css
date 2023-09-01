@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'rainyhearts';
+    src: url('/fonts/rainyhearts.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'kiwisoda';
+    src: url('/fonts/KiwiSoda.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'monocraft';
+    src: url('/fonts/monocraft.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+.font-rainy {
+    font-family: "rainyhearts";
+}
+
+.font-kiwi {
+    font-family: "kiwisoda";
+}
+
+.font-mono {
+    font-family: "monocraft";
+}

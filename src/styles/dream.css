@@ -1,0 +1,101 @@
+:root {
+    --dream-target-gray: #ffffff;
+}
+body {
+    padding: 0; margin: 0;
+}
+
+.dream-background-overflow-hider {
+    background-color: #00000000;
+    position: absolute;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+.dream-background {
+    position: absolute;
+    top: -300vh;
+    left: -300vw;
+    z-index: -1;
+    width: 600vw; height: 600vh;
+    background-image: url("/bg.png");
+    background-size: cover;
+    image-rendering: pixelated;
+    animation-name: "pan-background";
+    animation-duration: 300s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes pan-background {
+    from {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+.dream-content-spacer {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.dream-content-container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 50rem;
+    height: 100%;
+}
+.dream-content-background {
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: calc(100%);
+    background: rgba(0, 0, 0, 0.61);
+    z-index: -1;
+}
+
+.dream-content-bg-container {
+    height: 100%;
+    width: 100%;
+}
+.dream-content {
+    height: 100%;
+    width: 100%;
+}
+.dream-topbar {
+    margin-top: 1rem;
+    display: flex;
+    height: 4rem;
+    width: 100%;
+    /*background: rgba(0,0,0,0.4);*/
+}
+.dream-logo-img-header {
+    image-rendering: pixelated;
+    padding: .5rem;
+    min-width: 0; /* Ensure the item can be smaller than its content */
+    max-width: 100%; /* Prevent the item from exceeding the container's width */
+    max-height: 100%;
+    overflow: hidden;
+    mix-blend-mode: difference;
+}
+
+.mix-difference {
+    mix-blend-mode: difference;
+}
+
+.dream-header-dotnet {
+    margin: 0;
+    margin-bottom: 6px;
+    align-self: end;
+}
+
+.dream-text {
+    color: var(--dream-target-gray);
+}

@@ -1,0 +1,24 @@
+---
+import DreamLayout from "../layouts/DreamLayout.astro";
+import BlogCard from "../components/BlogCard.astro"
+const allPosts = await Astro.glob('../pages/blog/*.md');
+---
+
+<DreamLayout>
+    <div class="dream-content">
+        <section>
+            <h1 class="dream-text font-rainy mix-difference">
+                New blog posts
+            </h1>
+        </section>
+        <div class='blog-cards-container'>
+            <section class="blog-card-container">
+                {allPosts.map((post) => <BlogCard
+                        blogTitle={post.frontmatter.title}
+                        blogDescription={post.frontmatter.description}
+                        url={post.frontmatter.url}></BlogCard>)}
+            </section>
+            <br></br>
+        </div>
+    </div>
+</DreamLayout>
