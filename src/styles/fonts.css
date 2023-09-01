@@ -19,6 +19,20 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: "retrogaming";
+    src: url("/fonts/Retro Gaming.ttf");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "pixeloperator";
+    src: url("/fonts/PixelOperator.ttf");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 .font-rainy {
     font-family: "rainyhearts";
 }
@@ -29,4 +43,11 @@
 
 .font-mono {
     font-family: "monocraft";
+}
+
+.font-retro {
+    font-family: "retrogaming";
+}
+.font-pixel {
+    font-family: "pixeloperator";
 }
