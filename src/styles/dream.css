@@ -14,12 +14,12 @@ body {
 }
 .dream-background {
     position: absolute;
-    top: -300vh;
-    left: -300vw;
+    top: -200vh;
+    left: -117vw;
     z-index: -1;
-    width: 600vw; height: 600vh;
+    width: 400vw; height: 400vh;
     background-image: url("/bg.png");
-    background-size: cover;
+    /*background-size: cover;*/
     image-rendering: pixelated;
     animation-name: "pan-background";
     animation-duration: 300s;
@@ -97,5 +97,5 @@ body {
 }
 
 .dream-text {
-    color: var(--dream-target-gray);
+    color: var(--dream-target-gray) !important;
 }

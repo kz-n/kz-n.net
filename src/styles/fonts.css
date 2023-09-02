@@ -43,6 +43,8 @@
 
 .font-mono {
     font-family: "monocraft";
+    font-size: smaller;
+    text-rendering: geometricPrecision;
 }
 
 .font-retro {
