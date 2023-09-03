@@ -1,22 +1,24 @@
 ---
-const {blogTitle, blogDescription, url} = Astro.props;
+const {blogTitle, blogDescription, url, date, tags} = Astro.props;
 ---
-<section class='blog-card'>
-    <section class='blog-card-header-container'>
-        <a class='blog-card-pseudobutton' href={"blog/"+url}>
-            <h2 class="blog-card-header dream-text font-pixel mix-difference">
-                {blogTitle}
-            </h2>
-        </a>
+<section class="blog-card-container">
+    <section class='blog-card'>
+        <section class='blog-card-header-container'>
+            <a class='blog-card-pseudobutton' href={"/blog/"+url}>
+                <h2 class="blog-card-header font-pixel mix-difference">
+                    {blogTitle}
+                </h2>
+            </a>
+        </section>
+        <section class='blog-card-content-container font-pixel mix-difference '>
+            <p>{blogDescription}</p>
+        </section>
     </section>
-    <section class='blog-card-content-container dream-text font-pixel mix-difference '>
-        <p>{blogDescription}</p>
+    <section class="blog-card-information">
+        <code class="blog-card-information-text-open-hint dream-text font-pixel mix-difference">
+            Click the title to open
+        </code>
+        <code class="blog-card-information-text mix-difference dream-text font-mono">Created  <code class="mix-difference font-mono dream-text blog-card-information-text">{date}</code></code>
+        <code class="blog-card-information-text dream-text font-mono mix-difference">Tags  <code class="mix-difference font-mono dream-text blog-card-information-text-tags">{tags}</code></code>
     </section>
-</section>
-<section class="blog-card-information">
-    <code class="blog-card-information-text-subtle dream-text font-pixel mix-difference">
-        Click the title to open
-    </code>
-    <code class="blog-card-information-text mix-difference dream-text font-mono">Created <code class="mix-difference font-mono dream-text blog-card-information-text-subtle">"date"</code></code>
-    <code class="blog-card-information-text dream-text font-mono mix-difference">Tags <code class="mix-difference font-mono dream-text blog-card-information-text-subtle">tags</code></code>
 </section>

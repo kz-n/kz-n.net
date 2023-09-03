@@ -1,43 +1,97 @@
 ---
-const pageTitle = "About Me";
-
-const identity = {
-    firstName: "Sarah",
-    country: "Canada",
-    occupation: "Technical Writer",
-    hobbies: ["photography", "birdwatching", "baseball"],
-};
-
-const skills = ["Sex", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+import DreamLayout from "../layouts/DreamLayout.astro";
+import {version} from "../version.js";
 ---
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-    <style>
-        h1 {
-            color: purple;
-            font-size: 4rem;
-        }
-    </style>
-</head>
-<body>
-<a href="/">Home</a>
-<a href="/about/">About</a>
-<a href="/blog/">Blog</a>
-<h1>{pageTitle}</h1>
-<p>Here are a few facts about me:</p>
-<ul>
-    <li>My name is {identity.firstName}.</li>
-    <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-    {identity.hobbies.length >= 2 &&
-            <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-    }
-</ul>
-<p>My skills are:</p>
-<ul>
-    {skills.map((skill) => <li>{skill}</li>)}
-</ul>
-</body>
-</html>
+<DreamLayout>
+    <div class="dream-content">
+        <section>
+            <h1 class="dream-text font-pixel mix-difference">
+                About this website
+            </h1>
+            <div class="dream-text font-mono mix-difference">
+                Welcome to <span style="font-size:120%;" class="dream-text font-kiwi mix-difference">kz-n.net</span> v{version}, the newest iteration.
+            </div>
+            <div class="dream-text font-mono mix-difference">
+                Made with {Astro.generator} and 0 lines of JavaScript (so far)
+            </div>
+        </section>
+        <section>
+            <br>
+            <br>
+            <div class="dream-text font-mono mix-difference">
+                This is actually my first time making something in Astro, so I was pleased by the development speed (compared to React)
+            </div>
+        </section>
+        <section>
+            <br>
+            <div class="dream-text font-mono mix-difference">
+                The <a class="dream-text font-mono mix-difference" href="https://next-kz-n.vercel.app/blog">old (unfinished) website</a> (never got out of testing phase) is actually pretty similiar to this (and that is because it has the same CSS),
+                but it took me way less time to remake it in Astro, So I used the spare time that gave me to also redesign how the website looks.
+                Still did most of this in 3 days, lol.
+            </div>
+        </section>
+        <section>
+            <wbr>
+            <div class="dream-text font-mono mix-difference">
+                You should check out my friend Flint's <a style="font-size: 110%" class="dream-text font-mono mix-difference" href="https://fl1nt.dev">website</a>, as this website would not exist right now if he didn't renew my domain for me. <span style="font-size: 200%" class="font-kiwi">very cool!</span>
+            </div>
+            <br>
+            <br>
+            <div class="dream-text font-mono mix-difference">
+                The source code will be available at some point in time once its considerably cleaner than now (trust me there's nothing impressive to see anyways)
+            </div>
+            <br>
+        </section>
+        <section>
+            <h1 class="dream-text font-pixel mix-difference">
+                About me
+            </h1>
+            <div class="dream-text font-mono mix-difference">
+                I'm a random person of the internet that likes to use Java for Minecraft development or lose my sanity making websites (or touching webdev in general)
+            </div>
+            <br>
+            <div class="dream-text font-mono mix-difference">
+                I have used the Godot Engine extensively over 4+ years, mostly to develop some small scope demos, however recently I have <a style="font-size:110%;" class="dream-text font-mono mix-difference" href="https://kz-n.itch.io/">worked on some games</a>
+                <br>
+                My most recent (and proud) work is the sounds for the 7 day Brackeys Game Jam 2023.2 entry <a style="font-size:120%;" class="dream-text font-mono mix-difference" href="https://kawaii-kultist.itch.io/deep-reflection">Deep_Reflection</a>.
+            </div>
+            <br>
+            <div class="dream-text font-mono mix-difference">
+                When I'm not busy begging JetBrains for a CLion key I also make memory leaks in C++ with Visual Studio, I'm currently working on an OpenGL renderer for learning purposes.
+            </div>
+            <wbr>
+            <div class="dream-text font-mono mix-difference">
+                If you've ever had a word with me you'd probably know I am a big fan of electronic music, I don't listen to any pop music because I find it to be soul-less, corporate-first and money-second.
+            </div>
+            <div class="dream-text font-mono mix-difference">
+                I don't ever listen to one genre though and I also don't like the "gaming montage" kind of music, Some of my favourite artists are:
+                <a style="font-size:100%;" class="dream-text font-mono mix-difference" href="https://youtu.be/LGxe6zUA0cA">Mr. Bill</a>,
+                <a style="font-size:100%;" class="dream-text font-mono mix-difference" href="https://www.youtube.com/watch?v=1s27A6oyEZA">she</a>,
+                <a style="font-size:100%;" class="dream-text font-mono mix-difference" href="https://www.youtube.com/watch?v=6ncSFN3nyB0">Infected Mushroom</a>,
+                <a style="font-size:100%;" class="dream-text font-mono mix-difference" href="https://www.youtube.com/watch?v=ITzDBMnfrGY">poixone</a>,
+                <a style="font-size:100%;" class="dream-text font-mono mix-difference" href="https://www.youtube.com/watch?v=I5M_zb-69r0">Geoxor</a>,
+                <a style="font-size:100%;" class="dream-text font-mono mix-difference" href="https://www.youtube.com/watch?v=PLpNl5dSL0Q">Grabbitz</a>,
+                <a style="font-size:100%;" class="dream-text font-mono mix-difference" href="https://www.youtube.com/watch?v=hQrdXKCWyp0">REZZ</a>,
+                <a style="font-size:100%;" class="dream-text font-mono mix-difference" href="https://www.youtube.com/watch?v=lDfSdA5-PRE">Chime</a>,
+                <a style="font-size:100%;" class="dream-text font-mono mix-difference" href="https://www.youtube.com/watch?v=ynFZiQKHB38">Fox Stevenson</a>,
+                <a style="font-size:100%;" class="dream-text font-mono mix-difference" href="https://www.youtube.com/watch?v=TAPdIAL3OjI">Panda Eyes</a> and the legendary,
+                <a style="font-size:100%;" class="dream-text font-mono mix-difference" href="https://www.youtube.com/watch?v=0gTpgDdYLMM">Au5</a>.<br>Listen to any of those links and let me know if you enjoyed it!<br> If you're still unsure of what I mean, check out my <a style="font-size:110%;" class="dream-text font-mono mix-difference" href="https://last.fm/user/kz-n">last.fm</a> page.
+            </div>
+            <br><br>
+            <div class="dream-text font-mono mix-difference">
+                You might have noticed I mentioned having made sounds for a game, I also sometimes create music and sound effects in Ableton Live, I've been using DAWs in general since 2018 with good ol' GarageBand, later in 2019 I moved to FL Studio and significantly progressed, I've moved to Ableton Live in fall of 2021 and I'm never looking back. Since then I have made a lot of music, but it will probably never meet the internet.
+            </div>
+        </section>
+        <section>
+            <h1 class="dream-text font-pixel mix-difference">
+                Socials
+            </h1>
+            <div class="dream-text font-mono mix-difference">
+                If you'd like to stalk me online, you can find me on Discord by the username kz_n or <a style="font-size:100%;" class="dream-text font-mono mix-difference" href="https://github.com/kz-n">on Github</a>, <a style="font-size:100%;" class="dream-text font-mono mix-difference" href="https://gitlab.com/kz-n">GitLab</a>, <a style="font-size:100%;" class="dream-text font-mono mix-difference" href="https://twitter.com/kz-n">Twitter</a> and <a style="font-size:100%;" class="dream-text font-mono mix-difference" href="https://kz-n.itch.io">itch.io</a>.
+            </div>
+            <div class="dream-text font-mono mix-difference">
+                If for some reason you need a contact email (why would you even need to?), you can contact me at <a style="font-size:100%;" class="dream-text font-mono mix-difference" href="mailto://kznof.contact@gmail.com">kznof.contact@gmail.com</a>
+            </div>
+        </section>
+    </div>
+</DreamLayout>

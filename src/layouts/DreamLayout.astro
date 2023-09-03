@@ -1,28 +1,33 @@
 ---
 import '../styles/dream.css';
 import '../styles/fonts.css';
-import '../styles/blog.css'
+import '../styles/blog.css';
 ---
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <script>
+        import "../turbo-router.js";
+    </script>
     <title>kz-n.net</title>
 </head>
     <body>
-        <div class="dream-background-overflow-hider">
+        <div class="dream-background-overflow-hider" data->
             <div class="dream-background"></div>
         </div>
-        <!--<div class="dream-content-background"></div>-->
+        <div class="dream-content-background"></div>
         <div class="dream-content-spacer">
             <div class="dream-content-container">
                 <div class="dream-topbar">
+                    <script>console.log(Math.random())</script>
                     <img src="/logobig.png" class="dream-logo-img-header">
 
                     </img>
-                    <h1 class="dream-text font-kiwi mix-difference dream-header-dotnet">.net</h1>
+                    <h1 class="font-kiwi dream-header-dotnet">.net</h1>
                 </div>
                 <div class="dream-content-bg-container">
                     <slot></slot>

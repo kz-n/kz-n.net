@@ -10,10 +10,13 @@ const { frontmatter } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <script>
+        import "../turbo-router.js";
+    </script>
     <title>kz-n.net</title>
 </head>
     <body>
-        <div class="dream-background-overflow-hider">
+        <div class="dream-background-overflow-hider"">
             <div class="dream-background"></div>
         </div>
         <!--<div class="dream-content-background"></div>-->

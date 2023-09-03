@@ -1,8 +1,19 @@
 .blog-cards-container {
     gap: 2rem;
-    display: grid;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
 }
-
+.blog-cards-center {
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.blog-card-container:nth-child(2) {
+    flex-direction: row-reverse;
+}
 .blog-backarrow {
     translate: -2.5rem;
 }
@@ -12,18 +23,23 @@
     display: flex;
     flex-direction: column;
     padding-left: 1rem;
+    padding-right: 1rem;
 }
 code {
     font-size: 90%;
     color: rgba(255, 255, 33, 0.6705882353);
 }
 
-.blog-card-information-text-subtle {
+.blog-card-information-open-hint{
+    font-size: small;
 }
 
 .blog-card-information-text {
     font-size: x-small;
     color: #c9c0c0;
+}
+.blog-card-information-text-tags {
+    font-size: 90%;
 }
 
 .blog-card-container {
@@ -33,9 +49,9 @@ code {
 }
 
 .blog-card {
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.25);
     background-color: rgba(0, 0, 0, 0.06);
-    box-shadow: 0 0 1vh rgba(255, 255, 255, 0.06);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.42);
     border-radius: 8px;
     scrollbar-width: none;
     display: flex;
@@ -43,21 +59,22 @@ code {
     flex-direction: column;
     overflow: scroll;
     overflow-x: hidden;
-    height: 13rem;
-    width: 20rem;
+    height: 8rem;
+    width: 25rem;
+    z-index: +3;
 }
 
 .blog-card-header {
     margin: 0;
     font-size: 1.5rem;
-    color: var(--dream-target-gray);
+    color: #505050
 }
 
 .blog-card-header-container {
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.19);
-    box-shadow: 0 0 1vh rgba(0, 0, 0, 0.19);
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 0 0 1vh rgba(0, 0, 0, 0.42);
     position: sticky;
     display: flex;
     width: calc(100% - 0.5rem);
@@ -78,7 +95,11 @@ a:link{
 p {
     margin: 0;
 }
+.code {
+    border: none;
+}
 .blog-card-pseudobutton {
+    border: none;
     cursor: pointer;
     transition-property: color;
     transition-duration: 0.3s;

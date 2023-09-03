@@ -1,6 +1,7 @@
 ---
 import DreamLayout from "../layouts/DreamLayout.astro";
 import BlogCard from "../components/BlogCard.astro"
+import dayjs from "dayjs";
 const allPosts = await Astro.glob('../pages/blog/*.mdx');
 ---
 
@@ -11,14 +12,15 @@ const allPosts = await Astro.glob('../pages/blog/*.mdx');
                 New blog posts
             </h1>
         </section>
-        <div class='blog-cards-container'>
-            <section class="blog-card-container">
+        <div class="blog-cards-center">
+            <div class='blog-cards-container'>
                 {allPosts.map((post) => <BlogCard
                         blogTitle={post.frontmatter.title}
                         blogDescription={post.frontmatter.description}
-                        url={post.frontmatter.url}></BlogCard>)}
-            </section>
-            <br></br>
+                        url={post.frontmatter.url}
+                        date={dayjs.unix(post.frontmatter.date).format("DD/MM/YY")}
+                        tags={post.frontmatter.tags}></BlogCard>)}
+            </div>
         </div>
     </div>
 </DreamLayout>
