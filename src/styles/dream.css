@@ -62,7 +62,7 @@ body {
 }
 
 .dream-content-bg-container {
-    height: 100%;
+    /*height: 100%;*/
     width: 100%;
 }
 .dream-content {
@@ -70,12 +70,39 @@ body {
     width: 100%;
 }
 .dream-topbar {
-    margin-top: 1rem;
     display: flex;
     height: 4rem;
-    width: 100%;
-    mix-blend-mode: difference;
     /*background: rgba(0,0,0,0.4);*/
+}
+.dream-topbar-gap {
+    margin-top: 1rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 4rem;
+    gap: 25rem;
+    flex-direction: row;
+    /*background: rgba(0,0,0,0.4);*/
+}
+.dream-topbar-icon {
+    opacity: 1;
+    display: flex;
+    align-self: center;
+    z-index: +2;
+    width: 1.7rem;
+    height: 1.7rem;
+    transition: opacity 0.12s ease-in-out;
+}
+.dream-topbar-icon:hover {
+    cursor: pointer;
+    opacity:0.5;
+    /*filter: opacity(50%);*/
+}
+
+.dream-topbar-icons {
+    gap: 1rem;
+    display: flex;
+    height: 100%;
 }
 .dream-logo-img-header {
     image-rendering: pixelated;
@@ -86,7 +113,6 @@ body {
     max-height: 100%;
     overflow: hidden;
     filter: invert(67%) sepia(19%) saturate(12%) hue-rotate(314deg) brightness(82%) contrast(84%);
-
 }
 
 .mix-difference {
