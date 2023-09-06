@@ -2,6 +2,8 @@
     --dream-target-gray: #1d1721;
 }
 body {
+    min-width: 754px;
+    min-height: 695px;
     padding: 0; margin: 0;
 }
 
@@ -14,10 +16,10 @@ body {
 }
 .dream-background {
     position: absolute;
-    top: -200vh;
-    left: -117vw;
+    top: -400vh;
+    left: -217vw;
     z-index: -20;
-    width: 400vw; height: 400vh;
+    min-width: 800vw; min-height: 800vh;
     background-image: url("/bg.png");
     /*background-size: cover;*/
     image-rendering: pixelated;
