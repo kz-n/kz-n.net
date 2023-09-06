@@ -8,7 +8,7 @@
 
 .home-cool-stuff-container {
     z-index: +3;
-    height: 10rem;
+    height: fit-content;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -16,7 +16,9 @@
     align-items: center;
     gap: 2rem;
 }
-
+.home-music-playing-container {
+    display: flex; flex-direction: column; height:100%; width: 100%;
+}
 .home-cool-stuff {
     z-index: +2;
     display: flex;
@@ -27,8 +29,12 @@
     /*background-color: rgba(0, 0, 0, 0.27);*/
 }
 .home-music-playing-image {
-    height: 100%;
+    height: 5rem;
     object-fit: cover;
+    transition: height 0.1s ease-in-out;
+}
+.home-music-playing-image:hover {
+    height: 8rem;
 }
 .home-music-playing {
     gap: 1rem;
@@ -40,6 +46,30 @@
 .home-track-info {
     color: #1d1721;
 }
+.home-webring-gif {
+    width: 88px;
+    height: 31px;
+    margin: 1px;
+    image-rendering: pixelated;
+}
 a:link {
     color: #1d1721;
+}
+a:visited {
+    color: #1d1721;
+}
+.home-webring-container {
+    width: 100%;
+    height: 100%;
+}
+#webring-marquee {
+    overflow: hidden;
+    width: 100%;
+}
+.home-addmybutton-container {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
 }
