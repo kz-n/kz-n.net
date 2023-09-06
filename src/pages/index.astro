@@ -3,7 +3,15 @@ import DreamLayout from "../layouts/DreamLayout.astro";
 import {webring} from "../webring";
 import dayjs from "dayjs";
 import BlogCard from "../components/BlogCard.astro";
-const allPosts = await Astro.glob('../pages/blog/*.mdx');
+import {MDXInstance} from "astro";
+var allPosts = await Astro.glob('../pages/blog/*.mdx');
+
+
+allPosts.sort(function(a, b) {
+    return b.frontmatter.date - a.frontmatter.date;
+})
+
+
 var all8831 = [];
 for(let thing in await import.meta.glob("../../public/88by31s/*.gif", { eager: true, as: 'url' })) {
     all8831.push(thing.replace("../../public", ""));
@@ -11,8 +19,6 @@ for(let thing in await import.meta.glob("../../public/88by31s/*.gif", { eager: t
 ---
 
 <DreamLayout>
-
-    <div class="dream-content">
         <section>
             <h1 class="dream-text font-pixel mix-difference">
                 Welcome to my corner of the Internet,
@@ -81,7 +87,6 @@ for(let thing in await import.meta.glob("../../public/88by31s/*.gif", { eager: t
                         tags={post.frontmatter.tags}></BlogCard>)}
             </div>
         </div>
-    </div>
     <script>
         import marquee from 'vanilla-marquee';
         new marquee( document.getElementById( 'webring-marquee' ) );

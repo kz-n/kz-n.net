@@ -53,10 +53,10 @@
     image-rendering: pixelated;
 }
 a:link {
-    color: #1d1721;
+    color: #1d1721 !important;
 }
 a:visited {
-    color: #1d1721;
+    color: #1d1721 !important;
 }
 .home-webring-container {
     width: 100%;

@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/DreamBlogLayout.astro
+title: The Making of kz-n.net 5x
+description: "After almost a year of not touching the website at all, I completely remade it in Astro in less than a week, Here's how."
+url: making-of-5x
+date: 1694003110
+tags: dev, website
+---
+
+import {blogComponents} from "../../components/BlogStyles.mdx";
+import "../../styles/blog.css"
+import {version} from "../../version.js";
+export const components = blogComponents;
+
+# The Making of kz-n.net 5x
+## Welcome to kz-n.net {version}
+
+After almost a year of not touching the website at all, I completely remade it in Astro in less than a week.
+<br></br>
+You may have hinted from this being version 5x that there was version 4x before this, And you would be correct. In fact I took a big portion of that version as a starting base for this, Mostly just the CSS for the blog though, everything else was remade from scratch.
+<br></br>
+
+<div className="blog-comparison">
+    <img className="blog-comparison-img" src="https://cdn.discordapp.com/attachments/700674340277977109/1148942842702614669/comparison.png"></img>
+    <p className="font-mono">As you can see, I clearly reused the design from my old website, however apart from that the rest is made from scratch.</p>
+</div>
+<br></br>
+<br></br>
+<br></br>
+It all started with me trying to copy the branding I've had for a while now, I wanted the website to literally be in the clouds, And that's the reason behind this background
+<br></br>
+<br></br>
+<div className="blog-comparison">
+    <p className="font-mono">Initially though, I didn't know how to make a seamless image and have it repeat infintely with CSS, so I had to zoom it in infinitely which looked garbage,</p>
+    <img className="blog-comparison-img" src="https://cdn.discordapp.com/attachments/700674340277977109/1148937853947084810/image.png"></img>
+</div>
+<br></br>
+<br></br>
+<div className="blog-comparison">
+    <img className="blog-comparison-img" src="https://media.discordapp.net/attachments/928063179622334465/1147944380804644964/image.png?width=515&height=249"></img>
+    <p className="font-mono">and zooming in also meant having a seam at some zoom point.</p>
+</div>
+<br></br>
+<br></br>
+<br></br>
+I later realized I could make a seamless image, and I did. Add to that a tremendously big width and height (hidden overflow of course) and a repeating flag and boom. Try zooming or resizing the page, It *should* remain the same.
+<br></br>
+<br></br>
+<br></br>
+Apart from that, I used to use a lot of mix-blend-mode in CSS, that made the effect 10x better cause the text on the page would respond to changes in the background.
+<br></br>
+Unfortunately that ruined everything that wasn't text as it was also being mixed with the background, and I found no sane way to get it to work as expected.
+So for now only the top bar effectively uses it
+<div className="blog-comparison">
+    <p className="font-mono">My favourite part of development has definitely been making the index page, This is heavily inspired by my friend Flint's <a style="font-size: 110%" class="dream-text font-mono mix-difference" href="https://fl1nt.dev">website</a>, as I first saw the music playing status on his page.</p>
+    <img className="blog-comparison-img" src="https://cdn.discordapp.com/attachments/700674340277977109/1148946494062338109/image.png?width=515&height=249"></img>
+</div>
+<br></br>
+<br></br>
+This is all, it is a pretty simple website, I hope you enjoy it though - lol.

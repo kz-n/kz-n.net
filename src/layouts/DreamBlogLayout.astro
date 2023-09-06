@@ -1,11 +1,14 @@
 ---
 import '../styles/dream.css';
+import '../styles/home.css';
 import '../styles/fonts.css';
-import '../styles/blog.css'
+import '../styles/blog.css';
 import TopBar from "../components/TopBar.astro";
-const { frontmatter } = Astro.props;
+const {frontmatter} = Astro.props;
+import dayjs from "dayjs";
 ---
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
@@ -16,18 +19,22 @@ const { frontmatter } = Astro.props;
     </script>
     <title>kz-n.net</title>
 </head>
-    <body>
-        <div class="dream-background-overflow-hider"">
-            <div class="dream-background"></div>
-        </div>
-        <!--<div class="dream-content-background"></div>-->
-        <div class="dream-content-spacer">
-            <div class="dream-content-container">
-                <TopBar/>
-                <div class="dream-content-bg-container">
-                    <slot></slot>
-                </div>
+<body>
+<div class="dream-background-overflow-hider" data->
+    <div class="dream-background"></div>
+</div>
+<div class="dream-content-background"></div>
+<div class="dream-content-spacer"  data-turbo-track="reload">
+    <div class="dream-content-container">
+        <TopBar/>
+        <div class="dream-content-bg-container">
+            <div class="dream-content">
+                <slot></slot>
+                <br>
+                <h2 class="font-mono">Created {dayjs(frontmatter.date * 1000)}</h2>
             </div>
         </div>
-    </body>
+    </div>
+</div>
+</body>
 </html>

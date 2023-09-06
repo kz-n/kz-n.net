@@ -1,5 +1,5 @@
 :root {
-    --dream-target-gray: rgb(187, 187, 187);
+    --dream-target-gray: #1d1721;
 }
 body {
     padding: 0; margin: 0;
@@ -66,6 +66,7 @@ body {
     width: 100%;
 }
 .dream-content {
+    position: relative;
     height: 100%;
     width: 100%;
 }
@@ -116,7 +117,7 @@ body {
 }
 
 .mix-difference {
-    mix-blend-mode: difference;
+    /*mix-blend-mode: difference;*/
 }
 
 .dream-header-dotnet {
@@ -127,5 +128,6 @@ body {
 }
 
 .dream-text {
-    color: var(--dream-target-gray) !important;
+    z-index: +3;
+    color: #1d1721;
 }
