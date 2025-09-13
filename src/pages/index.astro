@@ -4,6 +4,8 @@ import {webring} from "../webring";
 import dayjs from "dayjs";
 import BlogCard from "../components/BlogCard.astro";
 import {MDXInstance} from "astro";
+import "../styles/music.css";
+import MusicCard from "../components/MusicCard.astro";
 var allPosts = await Astro.glob('../pages/blog/*.mdx');
 
 
@@ -16,29 +18,34 @@ var all8831 = [];
 for(let thing in await import.meta.glob("../../public/88by31s/*.gif", { eager: true, as: 'url' })) {
     all8831.push(thing.replace("../../public", ""));
 }
+
+var allMusic = await Astro.glob('../pages/music/*.mdx');
+allMusic.sort((a, b) => (b.frontmatter.index || 0) - (a.frontmatter.index || 0));
 ---
 
 <DreamLayout>
         <section>
             <h1 class="dream-text font-pixel mix-difference">
-                 to my corner of the Internet,
+                Welcome to my corner of the Internet,
             </h1>
             <div class="dream-text font-pixel mix-difference">
                 I'm just a random person and you might already know me, if you don't - check out my <a style="font-size: 80%" class="dream-text font-mono mix-difference" href="/about">about page</a>.
             </div>
             <br>
             <div class="dream-text font-pixel mix-difference">
-                People usually know me from being a dev, but I do a lot more than that, Still I've participated in numerous Minecraft servers, from the most popular Earth servers, to full on networks.
+                I make music, I make websites, I make games, I make software, I make art, I make videos, I make anything and everything.
             </div>
             <br>
             <div class="dream-text font-pixel mix-difference">
-                Unfortunately I haven't had quite the time to no-life developing recently, I have managed to almost 100% Portal 1 which is honestly one of my life achievements at this point (I'm a noob at video games)
+                Here you'll find all of my projects, and if you'd like... some means to support me!
             </div>
             <br>
             <div class="dream-text font-pixel mix-difference">
-                Anyways, hope you like browsing around this website.
+                Anyways, hope you like what you see!
             </div>
         </section>
+        <br>
+       
         <br>
         <div class="home-cool-stuff-container">
             <div class="home-cool-stuff">
@@ -75,6 +82,16 @@ for(let thing in await import.meta.glob("../../public/88by31s/*.gif", { eager: t
         </div>
         <br>
         <h1 style="margin-top: 0;" class="dream-text font-pixel mix-difference">
+            My Music!
+        </h1>
+        <div class="music-cards-center">
+            <div class='music-cards-container'>
+                {allMusic.map((track) => (
+                    <MusicCard coverArt={"/music/" + track.frontmatter.cover} />
+                ))}
+            </div>
+        </div>
+        <h1 style="margin-top: 0;" class="dream-text font-pixel mix-difference">
             New blog posts
         </h1>
         <div class="blog-cards-center">
@@ -87,6 +104,7 @@ for(let thing in await import.meta.glob("../../public/88by31s/*.gif", { eager: t
                         tags={post.frontmatter.tags}></BlogCard>)}
             </div>
         </div>
+        
     <script>
         import marquee from 'vanilla-marquee';
         new marquee( document.getElementById( 'webring-marquee' ), {

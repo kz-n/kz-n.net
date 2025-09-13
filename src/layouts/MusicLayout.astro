@@ -1,0 +1,55 @@
+---
+import '../styles/dream.css';
+import '../styles/home.css';
+import '../styles/fonts.css';
+import '../styles/music.css';
+import TopBar from "../components/TopBar.astro";
+const { frontmatter } = Astro.props;
+---
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{frontmatter.title} | kz-n.net</title>
+</head>
+<body>
+<div class="dream-background-overflow-hider">
+    <div class="dream-background"></div>
+</div>
+<div class="dream-content-background"></div>
+<div class="dream-content-spacer">
+    <div class="dream-content-container">
+        <TopBar/>
+        <div class="dream-content-bg-container">
+            <div class="dream-content">
+                <div class="music-song-header">
+                    <img src={"/music/" + frontmatter.cover} alt={frontmatter.title + " cover art"} class="music-song-cover" />
+                    <div class="music-song-meta">
+                        <h1 class="font-pixel mix-difference">{frontmatter.title}</h1>
+                        {frontmatter.album && <h2 class="font-mono">Album: {frontmatter.album}</h2>}
+                        <h3 class="font-mono">Artist(s): {Array.isArray(frontmatter.artists) ? frontmatter.artists.join(", ") : frontmatter.artists}</h3>
+                        {frontmatter.shortDescription && <p class="font-mono">{frontmatter.shortDescription}</p>}
+                    </div>
+                </div>
+                <div class="music-song-links">
+                    {frontmatter.links && Object.entries(frontmatter.links).map(([service, url]) => (
+                        <a href={url} target="_blank" rel="noopener" class="music-song-link font-mono">{service}</a>
+                    ))}
+                </div>
+                <div class="music-song-description font-mono">
+                    {frontmatter.description}
+                </div>
+                {frontmatter.youtube && (
+                    <div class="music-song-youtube">
+                        <iframe width="560" height="315" src={`https://www.youtube.com/embed/${frontmatter.youtube}`} title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                )}
+                <slot></slot>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
