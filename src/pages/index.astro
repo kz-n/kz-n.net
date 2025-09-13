@@ -86,11 +86,15 @@ allMusic.sort((a, b) => (b.frontmatter.index || 0) - (a.frontmatter.index || 0))
         </h1>
         <div class="music-cards-center">
             <div class='music-cards-container'>
-                {allMusic.map((track) => (
+                {allMusic.length > 0 && (
+                    <MusicCard coverArt={"/music/" + allMusic[0].frontmatter.cover} class="music-card--featured" />
+                )}
+                {allMusic.slice(1).map((track) => (
                     <MusicCard coverArt={"/music/" + track.frontmatter.cover} />
                 ))}
             </div>
         </div>
+        <br>
         <h1 style="margin-top: 0;" class="dream-text font-pixel mix-difference">
             New blog posts
         </h1>

@@ -1,7 +1,7 @@
 ---
-const { coverArt } = Astro.props;
+const { coverArt, class: className = "" } = Astro.props;
 ---
-<section class="music-card-container">
+<section class={"music-card-container " + className}>
     <div class="music-card-square">
         <img src={coverArt} alt="Cover Art" class="music-card-coverart" />
     </div>
