@@ -23,91 +23,112 @@ var allMusic = await Astro.glob('../pages/music/*.mdx');
 allMusic.sort((a, b) => (b.frontmatter.index || 0) - (a.frontmatter.index || 0));
 ---
 
+
 <DreamLayout>
-        <section>
-            <h1 class="dream-text font-pixel mix-difference">
-                Welcome to my corner of the Internet,
-            </h1>
-            <div class="dream-text font-pixel mix-difference">
-                I'm just a random person and you might already know me, if you don't - check out my <a style="font-size: 80%" class="dream-text font-mono mix-difference" href="/about">about page</a>.
-            </div>
-            <br>
-            <div class="dream-text font-pixel mix-difference">
-                I make music, I make websites, I make games, I make software, I make art, I make videos, I make anything and everything.
-            </div>
-            <br>
-            <div class="dream-text font-pixel mix-difference">
-                Here you'll find all of my projects, and if you'd like... some means to support me!
-            </div>
-            <br>
-            <div class="dream-text font-pixel mix-difference">
-                Anyways, hope you like what you see!
-            </div>
-        </section>
-        <br>
-       
-        <br>
-        <div class="home-cool-stuff-container">
-            <div class="home-cool-stuff">
-                <div class="home-music-playing-container">
-                    <h1 class="font-mono" id="listening-to">Listening To:</h1>
-                    <div class="home-music-playing">
-                        <img src="" class="home-music-playing-image" id="home-music-playing-image">
+  <section class="macro-section-grid-container">
+    <div class="macro-sections-grid">
+        <section class="macro-section-container">
+            <section class="macro-section macro-section">
+                <h1 class="dream-text font-pixel mix-difference">
+                  Welcome to my corner of the Internet,
+                </h1>
+                <div class="dream-text font-pixel mix-difference">
+                  I'm just a random person and you might already know me, if you don't - check out my <a style="font-size: 80%" class="dream-text font-mono mix-difference" href="/about">about page</a>.
+                </div>
+                <br />
+                <div class="dream-text font-pixel mix-difference">
+                  I make music, I make websites, I make games, I make software, I make art, I make videos, I make anything and everything.
+                </div>
+                <br />
+                <div class="dream-text font-pixel mix-difference">
+                  Here you'll find all of my projects, and if you'd like... some means to support me!
+                </div>
+                <br />
+                <div class="dream-text font-pixel mix-difference">
+                  Anyways, hope you like what you see!
+                </div>
+                <br />
+                <div class="home-cool-stuff-container">
+                  <div class="home-cool-stuff">
+                    <div class="home-music-playing-container">
+                      <h1 class="font-mono" id="listening-to">Listening To:</h1>
+                      <div class="home-music-playing">
+                        <img src="" class="home-music-playing-image" id="home-music-playing-image" />
                         <div class="home-track-info">
-                            <h1 style="font-size:x-large;padding:0;margin:0;" class="font-pixel" id="track-name-artist"></h1>
-                            <a id="view-lfm" style="font-size: 100%" class="font-pixel">View on Last.FM</a>
+                          <h1 style="font-size:x-large;padding:0;margin:0;" class="font-pixel" id="track-name-artist"></h1>
+                          <a id="view-lfm" style="font-size: 100%" class="font-pixel">View on Last.FM</a>
                         </div>
+                      </div>
                     </div>
-                </div>
-            </div>
-            <div class="home-cool-stuff">
-                <div style="display: flex; flex-direction: column; height:100%; width: 100%">
-                    <h1 class="font-mono">My Webring:</h1>
-                    <div id="webring-marquee">
+                  </div>
+                  <div class="home-cool-stuff">
+                    <div style="display: flex; flex-direction: column; height:100%; width: 100%">
+                      <h1 class="font-mono">My Webring:</h1>
+                      <div id="webring-marquee">
                         <div class="home-webring-container">
-                            {all8831.map((gif) => <a href={webring[gif]}><img class="home-webring-gif" src={gif}></img></a>)}
+                          {all8831.map((gif) => (
+                            <a href={webring[gif]}><img class="home-webring-gif" src={gif} /></a>
+                          ))}
                         </div>
-                    </div>
-                    <div class="home-addmybutton-container">
+                      </div>
+                      <div class="home-addmybutton-container">
                         <div>
-                            <h1 style="padding:0;margin:0;" class="font-mono">Add my button!</h1>
-                            <a id="copy-button" class="font-pixel" href="#">Click to copy in your clipboard</a>
+                          <h1 style="padding:0;margin:0;" class="font-mono">Add my button!</h1>
+                          <a id="copy-button" class="font-pixel" href="#">Click to copy in your clipboard</a>
                         </div>
                         <div>
-                            <span style="font-size: large; position: relative; top:-25%" class="font-mono">---->  </span><a href="https://www.kz-n.net/"><img class="home-webring-gif"  src="https://www.kz-n.net/public/88x31.png"></a>
+                          <span style="font-size: large; position: relative; top:-25%" class="font-mono">---->  </span><a href="https://www.kz-n.net/"><img class="home-webring-gif"  src="https://www.kz-n.net/public/88x31.png" /></a>
                         </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </div>
-        </div>
-        <br>
-        <h1 style="margin-top: 0;" class="dream-text font-pixel mix-difference">
-            My Music!
-        </h1>
-        <div class="music-cards-center">
-            <div class='music-cards-container'>
-                {allMusic.length > 0 && (
-                    <MusicCard coverArt={"/music/" + allMusic[0].frontmatter.cover} class="music-card--featured" />
-                )}
-                {allMusic.slice(1).map((track) => (
-                    <MusicCard coverArt={"/music/" + track.frontmatter.cover} />
-                ))}
-            </div>
-        </div>
-        <br>
-        <h1 style="margin-top: 0;" class="dream-text font-pixel mix-difference">
-            New blog posts
-        </h1>
-        <div class="blog-cards-center">
-            <div class='blog-cards-container'>
-                {allPosts.map((post) => <BlogCard
+              </section>
+        </section>
+        <section class="macro-section-container">
+            <section class="macro-section macro-section">
+                <h1 style="margin-top: 0;" class="dream-text font-pixel mix-difference">
+                  My Music!
+                </h1>
+                <div class="music-cards-center">
+                  <div class='music-cards-container'>
+                    {allMusic.length > 0 && (
+                      <MusicCard coverArt={"/music/" + allMusic[0].frontmatter.cover} class="music-card--featured" />
+                    )}
+                    {allMusic.length > 1 && (
+                      <>
+                        {allMusic.slice(1).map((track) => (
+                          <MusicCard coverArt={"/music/" + track.frontmatter.cover} />
+                        ))}
+                      </>
+                    )}
+                  </div>
+                </div>
+              </section>
+        </section>
+        <section class="macro-section-container">
+            <section class="macro-section macro-section">
+                <h1 style="margin-top: 0;" class="dream-text font-pixel mix-difference">
+                  New blog posts
+                </h1>
+                <div class="blog-cards-center">
+                  <div class='blog-cards-container'>
+                    {allPosts.map((post) => (
+                      <BlogCard
                         blogTitle={post.frontmatter.title}
                         blogDescription={post.frontmatter.description}
                         url={post.frontmatter.url}
                         date={dayjs.unix(post.frontmatter.date).format("DD/MM/YY")}
-                        tags={post.frontmatter.tags}></BlogCard>)}
-            </div>
-        </div>
+                        tags={post.frontmatter.tags}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </section>
+        </section>
+        
+      </div>
+  </section>
         
     <script>
         import marquee from 'vanilla-marquee';

@@ -50,7 +50,7 @@ body {
     justify-content: center;
     display: flex;
     flex-direction: column;
-    width: 45rem;
+    width: 100%;
     height: 100%;
     margin-bottom: 5rem;
 }
@@ -75,14 +75,15 @@ body {
 .dream-topbar {
     display: flex;
     height: 4rem;
+    padding: 0 2.5rem 0 2.5rem;
     /*background: rgba(0,0,0,0.4);*/
 }
 .dream-topbar-gap {
     margin-top: 1rem;
     display: flex;
     width: 100%;
-    justify-content: center;
     height: 4rem;
+    
     gap: 25rem;
     flex-direction: row;
     /*background: rgba(0,0,0,0.4);*/
@@ -132,4 +133,39 @@ body {
 .dream-text {
     z-index: +3;
     color: #1d1721;
+}
+
+@media (max-width: 1000px) {
+    .macro-sections-grid {
+      grid-template-columns: 1fr;
+    }
+    .macro-section {
+      margin-bottom: 2rem;
+    }
+  }
+
+.macro-section {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 0;
+    width: 50rem;
+    justify-self: center;
+    
+}
+
+.macro-sections-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-items: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+.macro-section-container{
+    
+}
+
+.macro-section-grid-container {
+    padding: 0 2.5rem 0 2.5rem;
 }
