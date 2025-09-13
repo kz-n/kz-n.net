@@ -6,6 +6,39 @@
     margin-bottom: 0;
 }
 
+.home-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 90rem;
+    margin: 0 auto;
+}
+.home-topbar-container {
+    grid-column: 1 / span 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.home-topbar-container .dream-topbar-gap {
+    justify-content: flex-start !important;
+}
+.home-left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 45rem;
+}
+.home-right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 45rem;
+}
 .home-cool-stuff-container {
     z-index: +3;
     height: fit-content;
