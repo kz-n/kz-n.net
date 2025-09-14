@@ -1,7 +1,6 @@
 .music-cards-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
     width: 100%;
     height: 100%;
 }
@@ -133,4 +132,37 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Mobile responsive styles */
+@media (max-aspect-ratio: 1/1) {
+    .music-cards-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .music-card--featured {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .music-card {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .music-comparison {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .music-comparison-img {
+        width: 100%;
+        max-width: 20rem;
+    }
+    
+    .music-comparison-img:hover {
+        width: 100%;
+        max-width: 25rem;
+    }
 }

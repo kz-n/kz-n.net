@@ -115,3 +115,26 @@ p {
 .blog-comparison-img:hover {
     width: 30rem;
 }
+
+/* Mobile responsive styles */
+@media (max-aspect-ratio: 1/1) {
+    .blog-card {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .blog-comparison {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .blog-comparison-img {
+        width: 100%;
+        max-width: 20rem;
+    }
+    
+    .blog-comparison-img:hover {
+        width: 100%;
+        max-width: 25rem;
+    }
+}
